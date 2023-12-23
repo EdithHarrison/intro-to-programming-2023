@@ -1,26 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Personal Portfolio</title>
     <meta name="description" content="My First Programming Portfolio" />
+    <link rel="stylesheet" href="css/index.css">
+
 </head>
 <body>
-    <header style="text-align: center; padding: 20px 0;">
+    <div class="container">
+    <header>
+        <div class="primary_header">
         <h1>Edith Harrison</h1>
-        <nav>
-            <ul style="list-style: none; padding: 0;">
-                <li style="display: inline; margin-right: 20px;"><a href="#" style="text-decoration: none;">Home</a></li>
-                <li style="display: inline; margin-right: 20px;"><a href="#about" style="text-decoration: none;">About</a></li>
-                <li style="display: inline; margin-right: 20px;"><a href="#experience" style="text-decoration: none;">Experience</a></li>
-                <li style="display: inline; margin-right: 20px;"><a href="#connect" style="text-decoration: none;">Connect</a></li>
+        </div>
+        <nav class="secondary_header" id="menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#connect">Connect</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="about" style="padding: 20px; margin: 20px; border-radius: 5px;">
+    <section id="about">
+        <div></div>
+        <article class="left_article">
         <h2>About</h2>
-        <p>
+            <p>
             Hi there! My name is <strong>Edith</strong>, but my family and friends call me Nene. 
             I'm an immigrant from the Philippines and moved to the United States 6 years ago. 
             In the Philippines, I worked in the accounting industry for over 5 years. 
@@ -31,10 +38,12 @@
             I wasn't able to finish the whole course due to some family situation changes, 
             but I am determined to go back and relearn all of that knowledge. 
             That's why I'm so excited to be here in Code a Dream!
-        </p>
+            </p>
+         </article>
+         <aside class="right_article"><img src="img/Portrait.jpg" alt="" width="250" height="500" class="placeholder"/></aside>
     </section>
  
-    <section id="experience" style="padding: 20px; margin: 20px; border-radius: 5px;">
+    <section id="experience">
         <h2>Experience</h2>
 
         <h4>Political Campaign Website. <em>(still active)</em></h4>
@@ -51,20 +60,6 @@
     </section>
     
     <!-- Add Skills Section -->
-    <section id="skills" style="padding: 20px; margin: 20px; border-radius: 5px;">
-        <h2>Skills</h2>
-        <ul></ul>
-    </section>
-    
-    <section id="connect" style="padding: 20px; margin: 20px; border-radius: 5px;">
-        <h2>Connect</h2>
-        <h4><a href="https://github.com/EdithHarrison" style="text-decoration: none;">Github</a></h4>
-        <h4><a href="www.linkedin.com/in/edith-harrison-24161a7a" style="text-decoration: none;">LinkedIn</a></h4>
-    </section>
-    
-    <!-- Add Footer Element -->
-    <footer style="text-align: center; padding: 10px 0;">
-    </footer>
-    <script src="js/index.js"></script>
+
 </body>
 </html>
