@@ -1,137 +1,346 @@
-
-body, h1, h2, h3, p, ul, li, form {
-    margin: 0;
-    padding: 0;
-}
-
 body {
-    background-color: #f4f4f4;
-    color: #333;
-    font-family: 'Tacoma', sans-serif;
+        margin: 0px;
+        padding: 0px;
+        border: 0px;
+        background-color: #0B192F;
+        font-family: 'Helvetica', sans-serif;
+    }
+
+h2 {
+    color: #e6f1ff;
 }
 
-.container {
-    width: 80%;
-    margin: 0 auto;
+.nav-link {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    background-color: #0B192F /* Add a background color if needed */
 }
 
-header {
-    background-color:#f4f4f4;
-    color: #333;
-    padding: 1rem 0;
-}
-
-.primary_header {
-    padding: 20px 0; 
-    text-align: center; 
-}
-
-.primary_header h1 {
-    font-size: 2rem;
-}
-
-.secondary_header {
-    text-align: center;
-}
-
-.secondary_header ul {
-    list-style: none;
-}
-
-.secondary_header li {
-    display: inline;
-    margin-right: 15px;
-}
-
-.secondary_header a {
-    color: #333;
+#menu ul, li, a {
+    list-style-type: none;
+    margin-right: 20px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    color: #e6f1ff;
     text-decoration: none;
 }
 
-#about {
+#menu a:hover {
+    color: blue;
+}
+
+
+.secondary_header  {
+    width: 100%;
+    height: 90vh; 
     display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    padding: 2rem 0;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 100px;
+  }
+  .secondary_header h4,
+  .secondary_header h1,
+  .secondary_header h2,
+  .secondary_header p {
+    margin: 0;
+  }
+
+  .secondary_header h4 {
+    font-size: 1.5em;
+    color: #29f7c7;
+    margin: 0;
+  }
+  
+  .secondary_header h1 {
+    font-size: 6em;
+    color: #e6f1ff;
+  }
+  
+  .secondary_header h2 {
+    font-size: 3em;
+    color: #b2bee3
+  }
+  
+  .secondary_header p {
+    font-size: 1.5em;
+    color: #2980b9;
+    padding-top: 10px;
+  }
+  
+  .secondary_header .connect-button {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #29f7c7;; 
+    text-decoration: none;
+    border: 2px solid #29f7c7; 
+    border-radius: 5px;
+    width: 100px;
+    text-align: center; 
+  }
+  
+  .secondary_header .connect-button:hover {
+    color: #2980b9; 
+    border-color: #2980b9; 
+  }
+  
+  .right_article img {
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
+    height: auto; /* Maintain aspect ratio */
+    box-shadow: 20px 20px 0 0 #808080;
+    transition: border-color 0.3s ease;
+    border-spacing: 20px;
+}
+
+#about {
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Three rows: h2, articles, button */
+    grid-template-columns: 1fr 1fr; /* Two columns for articles */
+    gap: 20px; /* Adjust the gap between rows and columns as needed */
+    width: 100%;
+    height: 100%; 
+    padding-left: 180px;
+    justify-content: center;
+
 }
 
 .left_article {
-    width: 60%;
-}
-
-.left_article p {
-    line-height: 2; 
+    grid-row: 2; /* Place left_article in the second row */
+    grid-column: 1; /* Place in the first column */
+    line-height: 1.5em;
+    font-size: 1em;
+    color: #2980b9;
+    position: relative;
 }
 
 .right_article {
-    width: 40%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    grid-row: 2; /* Place right_article in the second row */
+    grid-column: 2; /* Place in the second column */
+    padding-left: 50px;
+    padding-bottom: auto;
 }
 
-.right_article img {
-    max-width: 100%;
-    height: auto;
-    margin-top: 40px;
+.experience-button {
+    grid-row: 3; /* Place the button in the third row */
+    grid-column: span 2; /* Span across both columns */
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #29f7c7;
+    text-decoration: none;
+    border: 2px solid #29f7c7;
+    border-radius: 5px;
+    width: 120px;
+    text-align: center; 
+    justify-self: center; /* Center horizontally */
+    align-self: center; /* Center vertically */
+}
+
+.experience-button:hover {
+    color: #2980b9; 
+    border-color: #2980b9; 
 }
 
 #experience {
-    padding: 2rem 0;
-}
-
-#experience h2, #skills h2, #connect h2, section h2 {
-    border-bottom: 2px solid #333;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-#experience h4, #skills ul, #connect .socials, #messages ul {
-    margin-bottom: 1rem;
-}
-
-.social_icons {
-    display: inline-block;
-    margin-right: 15px;
-}
-
-.social_icons img {
-    max-width: 30px;
-    height: auto;
-}
-
-form {
-    margin-top: 1rem;
-}
-
-label {
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
-input, textarea {
     width: 100%;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 100px;
 }
 
-button {
-    background-color: #333;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border: none;
+#experience p {
+    color: #2980b9; ;
+}
+
+
+.experience-item {
+    width: 100%;
+    padding: 15px;
+}
+
+.experience-item1,
+.experience-item2,
+.experience-item3 {
+    width: 30%;
+    border: 1px solid #ccc;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.skills {
+    width: 100%;
+}
+
+.skills-sections { 
+    padding: 20px;            /* Add padding */
+    display: flex;            /* Use Flexbox for layout */
+    flex-direction: column;   /* Stack children in a column */
+    align-items: center;      /* Center children horizontally */
+    text-align: center;       /* Center text within the section */
+}
+
+/* Styles for the Skills List */
+.skills-sections ul {
+    list-style: none;         /* Remove default list styles */
+    padding: 0;
+    margin: 0;
+    display: flex;            /* Display skills in a row */
+    justify-content: center;  /* Center the skills horizontally */
+}
+
+/* Styles for individual skill items */
+.skills-sections li {
+    margin: 10px;              /* Add margin between skills */
+    padding: 10px 20px; 
+    color:  #29f7c7;       /* Add padding to each skill item */
+    border: 1px solid #29f7c7;   /* Add border to each skill item */
+    border-radius: 5px;       /* Add border-radius for rounded corners */
+}
+.socials h2 {
+    text-align: center;
+    margin-bottom: 30px; /* Adjust margin as needed */
+}
+.socials {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.social_icons {
+    display: flex;
+    justify-content: center;
+}
+
+.social_icons a {
+    margin: 0 30px; /* Adjust margin as needed */
+}
+
+.social_icons a img {
+    width: 40px; /* Adjust the size of the icons as needed */
+    height: 40px;
+    border-radius: 50%; /* Make the icons round */
+}
+
+.form_container {
+    box-sizing: border-box;
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 800px;
+    margin: 0 auto;
+}
+
+#message_form,
+#messages {
+    box-sizing: border-box;
+    width: 48%;
+    padding: 20px;
+    max-height: 450px; /* Set a fixed height as needed */
+    overflow: auto; /* Add overflow property for scrollbar if content exceeds the height */
+}
+
+/* Style for the form section */
+#message_form {
+    border-radius: 8px;
+    box-shadow: 0 0 10px #2980b9; 
+}
+
+#message_form h2 {
+    color: #e6f1ff;
+}
+
+#message_form label {
+    display: block;
+    color: #2980b9; 
+}
+
+#message_form input,
+#message_form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#message_form button {
+    background-color: #0B192F;
+    color: #29f7c7; 
+    padding: 12px 20px;
+    border: 2px solid;
+    border-color: #29f7c7;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #666565; 
+#message_form button:hover {
+    color: #2980b9;
+    border-color: #2980b9;
+}
+
+/* Adjust line height for the message text */
+#message_form textarea {
+    line-height: 1.5;
+}
+
+/* Style for the messages section */
+#messages {
+    max-width: 400px;
+    overflow: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #2980b9; 
+}
+
+#messages h2 {
+    position: sticky;
+    margin: 0;
+    padding: 10px;
+    color: #e6f1ff;
+}
+
+#messages ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#messages li {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 8px;
+}
+
+#messages p {
+    margin: 0;
+}
+
+/* Button Styles */
+#messages button {
+    background-color: #0B192F;
+    color: #29f7c7; 
+    padding: 8px 12px;
+    border: 2px solid;
+    border-color: #29f7c7;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#messages button:hover {
+    color: #2980b9;
+    border-color: #2980b9;
 }
 
 footer {
-    margin-top: 2rem;
-    padding: 1rem 0;
-    background-color:  #f4f4f4;
-    color: #333;
-    text-align: center;
+    color: #e6f1ff;  
 }
