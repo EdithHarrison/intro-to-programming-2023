@@ -43,6 +43,31 @@ messageForm.addEventListener('submit', function (event) {
         <span>${usersMessage}</span>
     `;
 
+    // Edit Button
+    const editButton = document.createElement('button');
+    editButton.innerText = 'Edit';
+    editButton.type = 'button'; 
+
+    editButton.addEventListener('click', function () {
+    const spanElement = newMessage.querySelector('span');
+    const existingContent = spanElement.textContent;
+
+    const editInput = document.createElement('input');
+    editInput.type = 'text';
+    editInput.value = existingContent;
+
+    newMessage.replaceChild(editInput, spanElement);
+
+    editInput.focus();
+
+    editInput.addEventListener('blur', function () {
+        const editedContent = editInput.value;
+        spanElement.textContent = editedContent;
+        newMessage.replaceChild(spanElement, editInput);
+    });
+});
+
+    // Remove Button
     const removeButton = document.createElement('button');
     removeButton.innerText = 'Remove';
     removeButton.type = 'button';
@@ -52,6 +77,7 @@ messageForm.addEventListener('submit', function (event) {
         entry.remove();
     });
 
+    newMessage.appendChild(editButton);
     newMessage.appendChild(removeButton);
     messageList.appendChild(newMessage);
 });

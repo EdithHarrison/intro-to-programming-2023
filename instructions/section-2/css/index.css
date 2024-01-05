@@ -23,6 +23,7 @@ h2 {
     flex-wrap: wrap;
     justify-content: space-between;
     background-color: #0B192F;
+    z-index: 1000;
 }
 
 .logo-container {
