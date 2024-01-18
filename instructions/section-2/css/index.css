@@ -142,10 +142,6 @@ h2 {
     transform: scale(1.1);
 }
 
-.right_article img:not(:hover) {
-    filter: saturate(50%) hue-rotate(90deg); 
-}
-
 .experience-button {
     grid-row: 3;
     grid-column: span 2;

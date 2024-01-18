@@ -82,47 +82,37 @@ messageForm.addEventListener('submit', function (event) {
     messageList.appendChild(newMessage);
 });
   
-    const githubUsername = "EdithHarrison";
+const githubUsername = "EdithHarrison";
+const githubApiUrl = `https://api.github.com/users/${githubUsername}/repos`;
+const projectSection = document.getElementById('projects');
+const projectList = projectSection.querySelector('ul');
 
-    const githubRequest = new XMLHttpRequest();
-
-    const githubApiUrl = `https://api.github.com/users/${githubUsername}/repos`;
-    githubRequest.open('GET', githubApiUrl);
-
-    githubRequest.onreadystatechange = function () {
-    if (githubRequest.readyState === 4 && githubRequest.status === 200) {
-
-        const repositories = JSON.parse(githubRequest.responseText);
-        console.log(repositories); 
-
-        const projectSection = document.getElementById('projects');
-        const projectList = projectSection.querySelector('ul');
-
-        // Loop through repositories and create <a> tags with additional information
-        for (let i = 0; i < repositories.length; i++) {
-            const project = document.createElement('li');
-            const projectLink = document.createElement('a');
-            const projectDetails = document.createElement('p');
-
-            // Set the href attribute to the GitHub repository URL
-            projectLink.href = repositories[i].html_url;
-
-            // Set the inner text of the <a> tag to the repository name
-            projectLink.innerText = repositories[i].name;
-
-            // Add additional information to the <p> tag
-            projectDetails.innerHTML = `<strong>Description:</strong> ${repositories[i].description || 'N/A'}<br>
-                                        <strong>Created at:</strong> ${new Date(repositories[i].created_at).toLocaleDateString()}`;
-
-            project.appendChild(projectLink);
-            project.appendChild(projectDetails);
-            projectList.appendChild(project);
-        }
+// Using the Fetch API to make a GET request
+fetch(githubApiUrl)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
     }
-};
+    return response.json();
+  })
+  .then(repositories => {
+    for (let i = 0; i < repositories.length; i++) {
+      const project = document.createElement('li');
+      const projectLink = document.createElement('a');
+      const projectDetails = document.createElement('p');
+      projectLink.href = repositories[i].html_url;
 
-githubRequest.addEventListener('load', function (event) {
-   
-});
+      projectLink.innerText = repositories[i].name;
 
-githubRequest.send();
+      // Add additional information to the <p> tag
+      projectDetails.innerHTML = `<strong>Description:</strong> ${repositories[i].description || 'N/A'}<br>
+                                  <strong>Created at:</strong> ${new Date(repositories[i].created_at).toLocaleDateString()}`;
+
+      project.appendChild(projectLink);
+      project.appendChild(projectDetails);
+      projectList.appendChild(project);
+    }
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
