@@ -1,3 +1,60 @@
+//Clickable experience section
+document.addEventListener("DOMContentLoaded", function () {
+  const clickables = document.querySelectorAll(".clickable");
+  const descriptions = document.querySelectorAll(".description");
+  const companies = document.querySelectorAll(".company");
+
+  // Initially show the first description, highlight the first clickable, and show the first company as active
+  descriptions[0].classList.add("active");
+  companies[0].classList.add("active");
+  clickables[0].classList.add("active");
+
+  // Initially the first image and its corresponding <p> as active 
+  companies.forEach((company, index) => {
+    const img = company.querySelector("img");
+    const description = company.querySelector("p");
+
+    if (index === 0) {
+      img.style.display = "block";
+      description.style.display = "block";
+    } else {
+      img.style.display = "none";
+      description.style.display = "none";
+    }
+  });
+
+  clickables.forEach((clickable, index) => {
+    clickable.addEventListener("click", () => {
+      // Hide all descriptions, companies, and images
+      descriptions.forEach((desc) => {
+        desc.classList.remove("active");
+      });
+
+      companies.forEach((company) => {
+        company.classList.remove("active");
+      });
+
+      // Show the corresponding description, company, and image
+      descriptions[index].classList.add("active");
+      companies[index].classList.add("active");
+
+      // Hide all images and corresponding <p> elements, then show the corresponding image and <p>
+      document.querySelectorAll(".company img, .company p").forEach((element) => {
+        element.style.display = "none";
+      });
+
+      companies[index].querySelector("img").style.display = "block";
+      companies[index].querySelector("p").style.display = "block";
+
+      // Toggle the active class for clickables
+      clickables.forEach((clickable) => {
+        clickable.classList.remove("active");
+      });
+      clickables[index].classList.add("active");
+    });
+  });
+});
+
 // Insert Copyright Text in Footer
 const today = new Date();
 const thisYear = today.getFullYear();
@@ -7,7 +64,7 @@ copyright.innerHTML = `&copy; Edith Harrison ${thisYear}`;
 footer.appendChild(copyright);
 
 // Create List of Skills
-const skills = ["HTML", "CSS", "JavaScript", "AJAX", "VSCode"];
+const skills = ["HTML", "CSS", "JavaScript", "AJAX", "VSCode", "Fetch API"];
 const skillsSection = document.getElementById('skills');
 const skillsList = skillsSection.querySelector('ul');
 
@@ -116,3 +173,16 @@ fetch(githubApiUrl)
   .catch(error => {
     console.error('Error fetching data:', error);
   });
+
+  //Adjust video speeds and smooth loop transition
+  document.addEventListener("DOMContentLoaded", function () {
+    var video = document.getElementById("backgroundVideo");
+
+    video.playbackRate = 0.5;
+
+    video.addEventListener("timeupdate", function () {
+        if (video.currentTime >= video.duration - 0.1) {
+            video.currentTime = 0;
+        }
+    });
+});

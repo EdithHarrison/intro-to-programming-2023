@@ -22,10 +22,14 @@
                         <li><a href="#skills">Skills</a></li>
                         <li><a href="#projects">Projects</a></li>
                         <li><a href="#connect">Connect</a></li>
+                        <li><a href="#message_form">Leave a message</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="secondary_header">
+              <video id="backgroundVideo" autoplay muted loop playsinline>
+                <source src="img/video.mp4" type="video/mp4">
+              </video>
                 <h4>Hello, my name is</h4>
                 <h1>Edith Harrison</h1>
                 <h2>Aspiring Front-End Developer</h2>
@@ -33,12 +37,18 @@
                 <p>user-friendly digital experiences for the web.</p>
                 <a href="#connect" class="connect-button">Let's Connect</a>
             </div>
+            <div class="social_header">
+              <a href="https://github.com/EdithHarrison"><img src="img/github.png" /></a>
+              <a href="https://www.linkedin.com/in/edith-harrison-24161a7a"><img src="img/linkedin.jpg" /></a>
+              <a href="https://www.facebook.com/edihardelsan"><img src="img/facebook.png" /></a>
+              <a href="https://www.instagram.com/edi.delsan.har/"><img src="img/instagram.png" /></a>
+          </div>
         </header>
 
         <section id="about">
-            <h2>About</h2>
+            <h2 class="line-heading">About Me</h2>
             <article class="left_article">
-                <p>Hi there! My name is <strong>Edith</strong>, but my family and friends call me Nene.
+                <p>Hi there! My name is <strong style="color: aqua;">Edith</strong>, but my family and friends call me Nene.
                     I'm an immigrant from the Philippines and moved to the United States 6 years ago.
                     In the Philippines, I worked in the accounting industry for over 5 years.
                 </p>
@@ -52,50 +62,113 @@
                 <p>I was even able to build my own website using HTML and CSS! Unfortunately,
                     I wasn't able to finish the whole course due to some family situation changes,
                     but I am determined to go back and relearn all of that knowledge.
-                    That's why I'm so excited to be here in Code a Dream!
+                    That's why I'm so excited to be here in <a href="https://learn.codethedream.org/"><span style="color: aqua">Code a Dream!</span></a>
                 </p>
             </article>
             <aside class="right_article"><img src="img/Portrait.jpg" alt="" width="300" height="300" class="portrait-img"></aside>
-            <a href="#experience" class="experience-button">See My Projects</a>
+            <a href="#projects" class="experience-button">See My Projects</a>
         </section>
 
         <section id="experience">
-            <div class="experience-item">
-                <h2>Experience</h2>
+            <h2 class="experience-title" id="experience-title">My Work Experience</h2>
+            <div class="experience-container">
+            <div class="clickable-column">
+              <div class="companyName" id="item1">
+                <p class="clickable">Appen Butler Hill</p>
+              </div>
+            
+              <div class="companyName" id="item2">
+                <p class="clickable">Reynolds Community College</p>
+              </div>
+            
+              <div class="companyName" id="item3">
+                <p class="clickable">Harte Hanks Inc.</p>
+              </div>
+        
+              <div class="companyName" id="item4">
+                <p class="clickable">Nancy Fishing Corp.</p>
+              </div>
+            </div>
+        
+            <div class="description-column">
+              <div class="description">
+                <h3>Social Media Evaluator</h3>
+                <p>September 2018 - Present</p>
+                <li>Evaluate the relevance and quality of queries, website articles, and advertisements to ensure customer retention.</li>
+                <li>Provides feedback and rate social media posts, news feeds, and advertisements to ensure it meets the platform’s guidelines and quality standards.</li>
+                <li>Rate and transcribe audio with 98% average accuracy.</li>
+                </div>
+              <div class="description">
+                <h3>Social Media Specialist</h3>
+                <p>December 2017 - September 2018</p>
+                <li>Provide special event technical support assistance to clients in the use of multimedia technical resources. Ensures clients have a successful event free from any technical issues.</li>
+                <li>Responsible for troubleshooting, maintenance, and inventory of related technology equipment.</li>
+                <li>Responds to technical requests using the ticketing system and resolve pending issues.</li>
+              </div>
+              <div class="description">
+                <h3>Technical Support Representative</h3>
+                <p>October 2015 - December 2016</p>
+                <li>Documented customers' information and steps taken using SAP software.</li>
+                <li>Troubleshooted and supported various products such as desktops, laptops, printers, tablets, televisions, and cameras.</li>
+                <li>Recognized as an employee of the month multiple times for having the highest ratings in action, ownership, customer satisfaction, and resolved tickets.</li>
+              </div>
+              <div class="description">
+                <h3>Accounting Staff</h3>
+                <p>July 2009 - September 2015</p>
+                <li>Prepared daily invoices and account statements for customers promptly.</li>
+                <li>Connects with customers to follow up with accounts receivable balances, increasing annual sales by 20%.</li>
+                <li>Accurately record all day-to-day financial transactions of the company with 100% error-free.</li>
+                <li>Created spreadsheet codes to automate financial reporting that improves accuracy and time efficiency.</li>
+              </div>
             </div>
 
-            <div class="experience-item1">
-                <h4><a href="https://teamboyet.com/" style="text-decoration: none;">Political Campaign Website. <em>(still active)</em></a></h4>
-                <p>The political campaign website is a one-page scroll designed to effectively showcase the party's achievements and activities to potential voters.</p>
-            </div>
+            <div class="company-column">
+                <div class="company" id="company1">
+                    <a href="https://appen.com/">
+                    <img src="img/Appen.png" alt="Image 1">
+                  </a>
+                  <p>Global leader in data for the AI Lifecycle. With over 400,000 contractors and operates in 130 countries. 
+                </p>
+                </div>
+                <div class="company" id="company2">
+                    <a href="https://www.reynolds.edu/">
+                    <img src="img/reynolds.png" alt="Image 2">
+                  </a>
+                  <p>A community college in Virginia established 50 years ago with three campuses. J. Sergeant Reynolds Community College is a key player in the education industry with 1500 employees across campuses.</p>
+                </div>
+                <div class="company" id="company3">
+                    <a href="https://www.hartehanks.com/">
+                    <img src="img/Harte.png" alt="Image 3">
+                  </a>
+                  <p>Global marketing services company dedicated to providing meticulous marketing expertise and execution to better understand, attract and engage their customers with 2,500+ employees in the US.</p>
+                </div>
+                <div class="company" id="company4">
+                    <a href="https://www.facebook.com/p/NANCY-FISHING-CORP-100064031345776/">
+                    <img src="img/NFC.png" alt="Image 4">
+                  </a>
+                  <p>One of the big fishing suppliers in the Philippines, with over 1000+ employees nationwide.</p>
+                </div>
+              </div>
 
-            <div class="experience-item2">
-                <h4><a href="https://themerienda.com/" style="text-decoration: none;">E-commerce Snack Website. <em>(no longer active)</em></a></h4>
-                <p>The website is for a Filipino snack subscription showcasing the delights of Filipino street food for Filipino immigrants missing their favorite snacks from home.</p>
-            </div>
-
-            <div class="experience-item3">
-                <h4><a href="https://editor.p5js.org/EdithHarrison/full/76ZVQtvIV" style="text-decoration: none;">P5 JS Javascript Project Pre-Assignment</a></h4>
-                <p>This project is created using P5.js and features a spider that moves downward and picks up a ball.</p>
             </div>
         </section>
 
         <!-- Add Skills Section -->
         <section id="skills" class="skills-sections">
-            <h2>Skills</h2>
+            <h2>My Skills</h2>
             <ul></ul>
         </section>
 
          <!-- Add Project Section -->
 
          <section id="projects">
-            <h2>Projects</h2>
+            <h2 class="line-heading">My Projects</h2>
             <ul class="project-item"></ul>
          </section>
 
         <section id="connect">
             <div class="socials">
-                <h2>Connect</h2>
+                <h2>Let's stay connected</h2>
                 <div class="social_icons">
                     <a href="https://github.com/EdithHarrison"><img src="img/github.png" /></a>
                     <a href="https://www.linkedin.com/in/edith-harrison-24161a7a"><img src="img/linkedin.jpg" /></a>
@@ -129,6 +202,10 @@
                 <ul></ul>
             </section>
         </div>
+
+        <div class="floating-email">
+          <a href="mailto:your@example.com">edithharrison0422@gmail.com</a>
+      </div>
 
         <!-- Add Footer Element -->
         <footer style="text-align: center; padding: 10px 0;">
